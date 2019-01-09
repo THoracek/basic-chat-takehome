@@ -1,68 +1,62 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Basic Chat
 
-## Available Scripts
+This is a React JS FrontEnd Application with a Node.js & socket.io backend service.
 
-In the project directory, you can run:
+The functional requirements are:
+* An application that allows two users to send short text messages to each other, like Facebook Messages app or Google Chat.
+   
+    * It's possible to type a short message and have it sent to another user
+    * It's possible to see messages sent from another user appear reasonably soon after they were sent
 
-### `npm start`
+## Prerequisites
+You’ll need to have Node 8.10.0 or later on your local development machine
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+I recommend using [nvm](https://github.com/creationix/nvm)
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
 
-### `npm test`
+## Installation
+First, clone this repo and `cd` into the main directory.  Then:
+```shell
+npm install
+```
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Then run: 
 
-### `npm run build`
+```shell
+cd backend && npm install
+```
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Development
+To run this project: `cd` into the main directory. Then:
+```shell
+npm start
+```
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Code Linting
+To enforce code consistency linting was included.
+```shell
+npm run lint
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Tests
+For TDD, invoke testing by:
+```shell
+npm run test
+```
 
-### `npm run eject`
+## Build the Server
+To compile the code:
+```shell
+npm run build
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Design Decisions
+* Basic Backend socket.io service was implemented to handle message transfer.
+* All users can see all messages sent
+* Users opening the web-page are presented with a card with an input to enter their username.
+* Once a username is entered the user can begin to chat with an input at the bottom of the page.
+  * Styled with the basic bootstrap component library
+  * User's own chat messages are in blue and rendered to the right
+  * Other user's chat messages are in grey and rendered to the left with the username below the message.
+  * Messages scroll down so that the most recent message is always visible when the chat becomes long.
+  * Chat messages cannot be sent without content in the send message input.

@@ -1,0 +1,16 @@
+{
+  "name": "guild-education-take-home-backend",
+  "version": "1.0.0",
+  "description": "the backend to support a chat implementation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Thomas Horacek",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2",
+    "socket.io": "^2.2.0",
+    "uuid": "^3.3.2"
+  }
+}
